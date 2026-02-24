@@ -1,0 +1,18 @@
+
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /indy/1/
+  
+  # Si el archivo existe, sírvelo directamente (evita el error de MIME type por 404)
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+  
+  # Si no existe, envía a index.html (soporte SPA)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . index.html [L]
+</IfModule>

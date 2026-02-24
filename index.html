@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indy Marchena | Arquitectura de Liderazgo Consciente</title>
+    
+    <!-- TAILWIND CSS (Playground version for simple hosting) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        editorial: {
+                            base: '#F1EDE7',
+                            text: '#1F1F1F',
+                            primary: '#0E3A8A',
+                            soft: '#85A8D1',
+                            accent: '#E996C3',
+                            mauve: '#B17B94',
+                            action: '#00A8A8',
+                            purple: '#7B2CBF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F1EDE7; color: #1F1F1F; overflow-x: hidden; }
+        .organic-blob { position: absolute; z-index: -1; filter: blur(80px); opacity: 0.15; mix-blend-mode: multiply; }
+        @keyframes morph {
+            0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
+            33% { border-radius: 73% 27% 53% 47% / 28% 66% 34% 72%; }
+            66% { border-radius: 33% 67% 28% 72% / 63% 27% 73% 37%; }
+        }
+        .animate-morph { animation: morph 15s ease-in-out infinite; }
+    </style>
+
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.40.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4"
+  }
+}
+</script>
+</head>
+<body class="antialiased">
+    <div id="root"></div>
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
