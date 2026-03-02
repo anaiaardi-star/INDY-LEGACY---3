@@ -5,13 +5,15 @@ import { useLanguage } from '../context/LanguageContext.js';
 const DiagnosticTool = () => {
   const { t } = useLanguage();
 
-  return React.createElement("section", { id: "diagnostico", className: "py-32 px-6 bg-editorial-base relative overflow-hidden" },
+  return React.createElement("section", { id: "diagnostico", className: "py-32 px-6 bg-white relative overflow-hidden" },
+    React.createElement("div", { className: "blob blob-green w-[500px] h-[500px] -bottom-20 -left-20 rounded-full opacity-10" }),
     React.createElement("div", { className: "max-w-4xl mx-auto relative z-10" },
       React.createElement("div", { className: "text-center mb-20" },
-        React.createElement("p", { className: "text-editorial-action text-[11px] font-bold tracking-[0.4em] uppercase" }, t('diagnostic.tag')),
-        React.createElement("h2", { className: "font-serif text-5xl text-editorial-primary mb-8" }, t('diagnostic.title'))
+        React.createElement("p", { className: "text-legacy-primary text-[12px] font-bold tracking-widest uppercase mb-4" }, t('diagnostic.tag')),
+        React.createElement("h2", { className: "font-jakarta text-legacy-dark mb-6" }, t('diagnostic.title')),
+        React.createElement("p", { className: "text-lg text-legacy-dark/60" }, t('diagnostic.desc'))
       ),
-      React.createElement("div", { className: "bg-white p-4 md:p-8 rounded-[4rem] shadow-2xl border border-editorial-primary/5 min-h-[650px] overflow-hidden" },
+      React.createElement("div", { className: "bg-white p-4 md:p-8 rounded-card shadow-soft border border-legacy-dark/5 min-h-[650px] overflow-hidden relative" },
         React.createElement("iframe", {
           src: "https://api.leadconnectorhq.com/widget/form/MFZGB0fdU6k1sSfnVJLU",
           style: { width: '100%', height: '618px', border: 'none', borderRadius: '3px' },

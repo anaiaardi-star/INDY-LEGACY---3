@@ -5,41 +5,47 @@ import { useLanguage } from '../context/LanguageContext.js';
 const Hero = () => {
   const { t } = useLanguage();
 
-  return React.createElement("header", { className: "relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-editorial-base" },
-    React.createElement("div", { className: "max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center" },
-      React.createElement("div", { className: "lg:col-span-6 animate-fade-in-up" },
-        React.createElement("div", { className: "flex items-center gap-6 mb-10" },
-          React.createElement("span", { className: "h-px w-12 bg-editorial-action" }),
-          React.createElement("p", { className: "text-editorial-action text-[11px] font-bold tracking-[0.4em] uppercase" }, t('hero.tag'))
+  return React.createElement("header", { className: "relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden" },
+    /* Parallax Background */
+    React.createElement("div", { 
+      className: "absolute inset-0 z-0",
+      style: {
+        backgroundImage: 'url("https://assets.cdn.filesafe.space/TOney01VGtUlQqbrLw6T/media/699383c8097809425260bae3.jpeg")',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        filter: 'blur(4px)',
+        transform: 'scale(1.05)'
+      }
+    }),
+    /* Overlay for readability */
+    React.createElement("div", { className: "absolute inset-0 bg-white/80 z-1" }),
+    
+    /* Decorative Blobs */
+    React.createElement("div", { className: "blob blob-blue w-[600px] h-[600px] -top-48 -left-48 rounded-full z-2 opacity-30" }),
+    React.createElement("div", { className: "blob blob-green w-[400px] h-[400px] bottom-0 -right-20 rounded-full opacity-10 z-2" }),
+    
+    React.createElement("div", { className: "max-w-7xl mx-auto px-6 w-full relative z-10" },
+      React.createElement("div", { className: "max-w-3xl" },
+        React.createElement("div", { className: "inline-block px-4 py-1.5 rounded-full bg-legacy-primary/10 text-legacy-primary text-[12px] font-bold tracking-wider uppercase mb-8" }, 
+          t('hero.tag')
         ),
-        React.createElement("h1", { className: "font-serif text-4xl md:text-5xl lg:text-6xl text-editorial-primary leading-[1.1] mb-8 tracking-tight" },
+        React.createElement("h1", { className: "font-jakarta text-legacy-dark mb-8 leading-[1.1] text-5xl md:text-7xl" },
           t('hero.title')
         ),
-        React.createElement("p", { className: "text-base md:text-lg text-editorial-text font-normal leading-relaxed max-w-xl mb-8" }, t('hero.subtitle')),
-        React.createElement("ul", { className: "space-y-4 mb-12" },
-          (t('hero.bullets') || []).map((bullet, index) => 
-            React.createElement("li", { key: index, className: "flex items-start gap-3 text-editorial-text/80 text-sm md:text-base" },
-              React.createElement("span", { className: "text-editorial-action font-bold" }, "✓"),
-              React.createElement("span", null, bullet)
-            )
-          )
+        React.createElement("p", { className: "text-xl md:text-2xl text-legacy-dark/80 font-normal leading-relaxed mb-12" }, 
+          t('hero.subtitle')
         ),
         React.createElement("div", { className: "flex flex-col sm:flex-row gap-6 items-center" },
-          React.createElement("a", { href: "#diagnostico", className: "bg-editorial-primary text-white px-8 py-4 rounded-full text-[10px] font-bold tracking-widest hover:bg-editorial-purple transition-all shadow-xl" }, t('hero.ctaMain') + " →"),
-          React.createElement("a", { href: "#manifiesto", className: "flex items-center gap-4 text-editorial-primary font-bold text-[10px] tracking-widest group" },
-            t('hero.ctaSecondary'),
-            React.createElement("span", { className: "w-10 h-10 rounded-full border-2 border-editorial-primary/20 flex items-center justify-center" }, "→")
-          )
-        )
-      ),
-      React.createElement("div", { className: "lg:col-span-6 hidden lg:block" },
-        React.createElement("div", { className: "relative pl-10" },
-          React.createElement("div", { className: "aspect-[4/5] overflow-hidden rounded-[5rem] shadow-2xl" },
-            React.createElement("img", { 
-              src: "https://storage.googleapis.com/msgsndr/TOney01VGtUlQqbrLw6T/media/699383c8ceaa05594a9a4908.jpeg", 
-              className: "w-full h-full object-cover" 
-            })
-          )
+          React.createElement("a", { 
+            href: "#diagnostico", 
+            className: "bg-legacy-primary text-white px-12 py-5 rounded-pill text-[15px] font-bold tracking-wide hover:bg-legacy-primaryDark transition-all shadow-soft animate-float" 
+          }, t('hero.ctaMain')),
+          React.createElement("a", { 
+            href: "#metodo", 
+            className: "px-12 py-5 rounded-pill border-2 border-legacy-primary/20 bg-white/50 backdrop-blur-sm text-legacy-primary font-bold text-[15px] tracking-wide hover:bg-white transition-all" 
+          }, t('hero.ctaSecondary'))
         )
       )
     )

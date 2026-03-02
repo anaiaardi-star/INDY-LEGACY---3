@@ -1,94 +1,77 @@
 
 import React from 'react';
+import { useLanguage } from './context/LanguageContext.js';
+import { Lightbulb, Zap, Trophy, ShieldCheck, Users2, Rocket } from 'lucide-react';
 import Navbar from './components/Navbar.js';
 import Hero from './components/Hero.js';
 import Manifesto from './components/Manifesto.js';
 import DiagnosticTool from './components/DiagnosticTool.js';
 import Methodology from './components/Methodology.js';
-import Technology from './components/Technology.js';
+import Testimonials from './components/Testimonials.js';
 import Footer from './components/Footer.js';
 
 const App = () => {
+  const { t } = useLanguage();
+
   return (
-    React.createElement("div", { className: "min-h-screen selection:bg-editorial-accent selection:text-white" },
+    React.createElement("div", { className: "min-h-screen selection:bg-legacy-accent selection:text-legacy-dark" },
       React.createElement(Navbar, null),
       React.createElement("main", null,
         React.createElement(Hero, null),
         React.createElement(Manifesto, null),
         React.createElement(Methodology, null),
-        React.createElement(Technology, null),
+        React.createElement(Testimonials, null),
         React.createElement(DiagnosticTool, null),
-        React.createElement("section", { id: "ecosistema", className: "py-48 px-6 bg-white relative" },
+        React.createElement("section", { id: "ecosistema", className: "py-32 px-6 bg-legacy-bgLight/20 relative" },
           React.createElement("div", { className: "max-w-7xl mx-auto" },
-            React.createElement("div", { className: "text-center mb-32 max-w-5xl mx-auto" },
-              React.createElement("p", { className: "text-editorial-mauve text-[14px] font-bold tracking-[0.5em] uppercase mb-8" }, "La Invitación al Crecimiento"),
-              React.createElement("h2", { className: "font-serif text-6xl md:text-8xl text-editorial-primary mb-10 italic leading-tight" }, "El Ecosistema Legacy"),
-              React.createElement("p", { className: "text-editorial-text/90 font-normal text-2xl md:text-3xl leading-relaxed max-w-3xl mx-auto" },
-                "No es solo una formación, es un rediseño total de tu identidad como líder. Elige tu punto de entrada."
-              )
+            React.createElement("div", { className: "text-center mb-20" },
+              React.createElement("p", { className: "text-legacy-primary text-[12px] font-bold tracking-widest uppercase mb-4" }, t('ecosystem.tag')),
+              React.createElement("h2", { className: "font-jakarta text-legacy-dark mb-6" }, t('ecosystem.title')),
+              React.createElement("p", { className: "text-lg text-legacy-dark/60 max-w-2xl mx-auto" }, "Diferentes niveles de profundidad para tu transformación.")
             ),
-            React.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-16 items-stretch" },
-              React.createElement("div", { className: "group p-16 rounded-[4.5rem] border-2 border-editorial-primary/5 hover:border-editorial-soft/40 transition-all duration-700 bg-editorial-base/20 hover:bg-white hover:shadow-3xl flex flex-col justify-between" },
+            React.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-8" },
+              React.createElement("div", { className: "bg-white p-10 rounded-card shadow-soft border border-legacy-dark/5 flex flex-col justify-between group hover:border-legacy-primary/20 transition-all" },
                 React.createElement("div", null,
-                  React.createElement("p", { className: "text-[12px] font-bold tracking-widest text-editorial-soft uppercase mb-10" }, "Nivel 1: Consciencia"),
-                  React.createElement("h3", { className: "font-serif text-5xl text-editorial-primary mb-10" }, "El Diagnóstico"),
-                  React.createElement("p", { className: "text-editorial-text/80 leading-relaxed mb-14 font-normal text-xl md:text-2xl" },
-                    "Analizamos tu situación actual para identificar los techos invisibles que frenan tu evolución."
-                  )
+                  React.createElement("div", { className: "w-14 h-14 rounded-2xl bg-legacy-primary/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform" },
+                    React.createElement(Lightbulb, { className: "w-7 h-7 text-legacy-primary" })
+                  ),
+                  React.createElement("p", { className: "text-[12px] font-bold text-legacy-primary uppercase mb-6" }, t('ecosystem.level1.tag')),
+                  React.createElement("h3", { className: "font-jakarta text-legacy-dark mb-6" }, t('ecosystem.level1.title')),
+                  React.createElement("p", { className: "text-legacy-dark/60 leading-relaxed mb-10" }, t('ecosystem.level1.desc'))
                 ),
-                React.createElement("a", { href: "#diagnostico", className: "inline-flex items-center gap-4 text-editorial-primary font-bold text-[12px] tracking-widest group-hover:gap-8 transition-all uppercase" },
-                  "INICIAR ANÁLISIS ", React.createElement("span", { className: "text-3xl" }, "→")
-                )
+                React.createElement("a", { href: "#diagnostico", className: "text-legacy-primary font-bold text-[12px] tracking-wide hover:gap-4 transition-all flex items-center gap-2" }, "COMENZAR TEST →")
               ),
-              React.createElement("div", { className: "relative group p-16 rounded-[4.5rem] bg-editorial-primary text-white shadow-[0_50px_100px_-20px_rgba(0,41,163,0.3)] hover:-translate-y-8 transition-transform duration-700 overflow-hidden flex flex-col justify-between" },
-                React.createElement("div", { className: "absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-bl-[5rem] group-hover:w-56 group-hover:h-56 transition-all duration-700" }),
+              React.createElement("div", { className: "bg-gradient-legacy p-10 rounded-card shadow-soft text-white flex flex-col justify-between transform lg:-translate-y-4 group" },
                 React.createElement("div", null,
-                  React.createElement("p", { className: "text-[12px] font-bold tracking-widest text-editorial-action uppercase mb-10" }, "Nivel 2: Transformación"),
-                  React.createElement("h3", { className: "font-serif text-6xl mb-6 italic leading-none" }, "Legacy Academy"),
-                  React.createElement("p", { className: "font-serif text-white/70 mb-12 italic text-2xl" }, "Mentoría para Futuros Líderes"),
-                  React.createElement("p", { className: "text-white/95 leading-relaxed mb-14 font-normal text-xl md:text-2xl" },
-                    "El programa definitivo para instalar el sistema operativo I.L.O. en tu vida y en tu organización."
-                  )
+                  React.createElement("div", { className: "w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform" },
+                    React.createElement(Zap, { className: "w-7 h-7 text-legacy-accent" })
+                  ),
+                  React.createElement("p", { className: "text-[12px] font-bold text-legacy-accent uppercase mb-6" }, t('ecosystem.level2.tag')),
+                  React.createElement("h3", { className: "font-jakarta mb-6" }, t('ecosystem.level2.title')),
+                  React.createElement("p", { className: "text-white/80 leading-relaxed mb-10" }, t('ecosystem.level2.desc'))
                 ),
-                React.createElement("a", { href: "#", className: "block w-full py-7 text-center bg-editorial-action text-editorial-primary rounded-full text-[13px] font-bold tracking-widest hover:bg-white transition-all shadow-xl uppercase" },
-                  "APLICAR A LA ACADEMIA"
-                )
+                React.createElement("a", { href: "#", className: "bg-legacy-accent text-legacy-dark py-4 text-center rounded-pill font-bold text-[12px] hover:bg-white transition-all" }, "APLICAR AHORA")
               ),
-              React.createElement("div", { className: "group p-16 rounded-[4.5rem] border-2 border-editorial-primary/5 hover:border-editorial-purple/40 transition-all duration-700 bg-editorial-base/20 hover:bg-white hover:shadow-3xl flex flex-col justify-between" },
+              React.createElement("div", { className: "bg-white p-10 rounded-card shadow-soft border border-legacy-dark/5 flex flex-col justify-between group hover:border-legacy-primary/20 transition-all" },
                 React.createElement("div", null,
-                  React.createElement("p", { className: "text-[12px] font-bold tracking-widest text-editorial-purple uppercase mb-10" }, "Nivel 3: Excelencia"),
-                  React.createElement("h3", { className: "font-serif text-5xl text-editorial-primary mb-10" }, "Consultoría I.L.O."),
-                  React.createElement("p", { className: "text-editorial-text/80 leading-relaxed mb-14 font-normal text-xl md:text-2xl" },
-                    "Acompañamiento uno a uno para construir una arquitectura de impacto masivo sin sacrificar tu libertad."
-                  )
+                  React.createElement("div", { className: "w-14 h-14 rounded-2xl bg-legacy-primary/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform" },
+                    React.createElement(Trophy, { className: "w-7 h-7 text-legacy-primaryDark" })
+                  ),
+                  React.createElement("p", { className: "text-[12px] font-bold text-legacy-primaryDark uppercase mb-6" }, t('ecosystem.level3.tag')),
+                  React.createElement("h3", { className: "font-jakarta text-legacy-dark mb-6" }, t('ecosystem.level3.title')),
+                  React.createElement("p", { className: "text-legacy-dark/60 leading-relaxed mb-10" }, t('ecosystem.level3.desc'))
                 ),
-                React.createElement("a", { href: "#", className: "inline-flex items-center gap-4 text-editorial-primary font-bold text-[12px] tracking-widest group-hover:gap-8 transition-all uppercase" },
-                  "SOLICITAR ENTREVISTA ", React.createElement("span", { className: "text-3xl" }, "→")
-                )
+                React.createElement("a", { href: "#", className: "text-legacy-primary font-bold text-[12px] tracking-wide hover:gap-4 transition-all flex items-center gap-2" }, "SOLICITAR INFO →")
               )
             )
           )
         ),
-        React.createElement("section", { id: "legado", className: "py-56 px-6 bg-editorial-primary text-white relative overflow-hidden" },
-          React.createElement("div", { className: "organic-blob top-[-20%] left-[-10%] w-[1000px] h-[1000px] bg-white opacity-5 animate-morph" }),
-          React.createElement("div", { className: "max-w-6xl mx-auto text-center relative z-10" },
-            React.createElement("div", { className: "w-40 h-40 mx-auto mb-16 rounded-[3rem] overflow-hidden border-4 border-editorial-soft shadow-3xl rotate-6 hover:rotate-0 transition-all duration-700" },
-              React.createElement("img", {
-                src: "https://storage.googleapis.com/msgsndr/TOney01VGtUlQqbrLw6T/media/699383c8ceaa05594a9a4908.jpeg",
-                alt: "Indy Marchena",
-                className: "w-full h-full object-cover object-center"
-              })
-            ),
-            React.createElement("h2", { className: "font-serif text-5xl md:text-8xl italic mb-16 leading-[1.1] max-w-5xl mx-auto text-balance" },
-              "\"El crecimiento real no es acumular, ", React.createElement("br", null), "es ", React.createElement("span", { className: "text-editorial-action" }, "aprender a soltar"), " para liderar.\""
-            ),
-            React.createElement("div", { className: "w-24 h-px bg-editorial-soft/50 mx-auto mb-12" }),
-            React.createElement("p", { className: "text-editorial-soft text-[14px] font-bold tracking-[0.6em] uppercase mb-24 opacity-90" }, "Indy Marchena | Founder of Legacy Architecture"),
-            React.createElement("a", { href: "#diagnostico", className: "group relative inline-block" },
-              React.createElement("div", { className: "absolute inset-0 bg-editorial-action rounded-full blur-3xl opacity-30 group-hover:opacity-60 transition-opacity" }),
-              React.createElement("span", { className: "relative bg-editorial-action text-editorial-primary px-20 py-8 rounded-full text-[14px] font-bold tracking-[0.4em] hover:bg-white transition-all shadow-[0_30px_60px_-10px_rgba(0,181,181,0.4)] uppercase" },
-                "COMIENZA TU APRENDIZAJE"
-              )
+        React.createElement("section", { className: "py-32 px-6 bg-legacy-dark text-white text-center relative overflow-hidden" },
+          React.createElement("div", { className: "blob blob-blue w-[500px] h-[500px] -top-40 -left-40 rounded-full opacity-20" }),
+          React.createElement("div", { className: "max-w-4xl mx-auto relative z-10" },
+            React.createElement("h2", { className: "font-jakarta mb-10" }, t('ctaFinal.title')),
+            React.createElement("a", { href: "#diagnostico", className: "inline-block bg-legacy-accent text-legacy-dark px-12 py-6 rounded-pill font-bold text-[16px] tracking-wide hover:bg-white transition-all shadow-soft" }, 
+              t('ctaFinal.btn')
             )
           )
         )

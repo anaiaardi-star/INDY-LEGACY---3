@@ -10,27 +10,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        editorial: {
-                            base: '#F1EDE7',
-                            text: '#1F1F1F',
-                            primary: '#0E3A8A',
-                            soft: '#85A8D1',
-                            accent: '#E996C3',
-                            mauve: '#B17B94',
-                            action: '#00A8A8',
-                            purple: '#7B2CBF'
+                        legacy: {
+                            primary: '#4F5DFF',
+                            primaryDark: '#3F48CC',
+                            accent: '#B7F59E',
+                            secondary: '#C9F7B9',
+                            bgLight: '#D6E2E4',
+                            dark: '#1A1A2E',
+                            light: '#FFFFFF'
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'Plus Jakarta Sans', 'sans-serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'card': '16px',
+                        'pill': '999px',
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 25px rgba(0,0,0,0.08)',
                     }
                 }
             }
@@ -38,14 +44,29 @@
     </script>
 
     <style>
-        body { background-color: #F1EDE7; color: #1F1F1F; overflow-x: hidden; }
-        .organic-blob { position: absolute; z-index: -1; filter: blur(80px); opacity: 0.15; mix-blend-mode: multiply; }
-        @keyframes morph {
-            0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
-            33% { border-radius: 73% 27% 53% 47% / 28% 66% 34% 72%; }
-            66% { border-radius: 33% 67% 28% 72% / 63% 27% 73% 37%; }
+        body { background-color: #FFFFFF; color: #1A1A2E; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+        .bg-gradient-legacy { background: linear-gradient(135deg, #4F5DFF 0%, #3F48CC 100%); }
+        .text-gradient-legacy { background: linear-gradient(135deg, #4F5DFF 0%, #3F48CC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .blob { position: absolute; z-index: -1; filter: blur(60px); opacity: 0.4; }
+        .blob-blue { background-color: #4F5DFF; }
+        .blob-green { background-color: #B7F59E; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
-        .animate-morph { animation: morph 15s ease-in-out infinite; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        h1 { font-size: 64px; font-weight: 600; line-height: 1.1; font-family: 'Plus Jakarta Sans', sans-serif; }
+        h2 { font-size: 44px; font-weight: 600; line-height: 1.2; font-family: 'Plus Jakarta Sans', sans-serif; }
+        h3 { font-size: 20px; font-weight: 500; line-height: 1.4; font-family: 'Plus Jakarta Sans', sans-serif; }
+        p { font-size: 16px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 42px; }
+            h2 { font-size: 32px; }
+        }
     </style>
 
     <script type="importmap">
